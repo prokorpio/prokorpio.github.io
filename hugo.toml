@@ -1,19 +1,6 @@
 baseURL = 'https://prokorpio.github.io/'
 languageCode = 'en-us'
-theme = "hugo-theme-nightfall"
-title = 'prokorpio@github.io'
-
-[module]
-[[module.imports]]
-  path = 'github.com/LordMathis/hugo-theme-nightfall'
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-
-[pagination]
-pagerSize = 3
+theme = "nightfall"
 
 [menu]
   [[menu.header]]
@@ -25,19 +12,37 @@ pagerSize = 3
     weight = 1
     url = "about"
 
+[params.author]
+  name = "Chris: Uy / Hi / Ciao!"
+  #avatar = "/avatar.png"
+  #avatarSize = "size-m"
+  #email = "christopher.sanchez@studenti.unitn.it"
+  #avatarFirst = false
+#
+[[params.social]]
+key = 0
+name = "email"
+url = "christopher.sanchez@studenti.unitn.it"
+aria = "My e-Mail Address"
+
 [params]
 user = "prokorpio"
 hostname = "github.io"
-
-[params.author]
-  name = "Chris"
-  avatar = "/avatar.png"
-  avatarSize = "size-m"
-  email = "christopher.sanchez@studenti.unitn.it"
-  avatarFirst = false
-
 openLinksInNewTab = true
 displayDateFormat = "2006-01-02"
+footerHtml = 'site under construction ✌️😅'
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params.styles]
+color = "orange"
+
+[pagination]
+pagerSize = 3
 
 # Global metadata display settings
 # Each can be overridden in individual post frontmatter
@@ -48,18 +53,4 @@ showTags = true           # Show tags on post page
 showAuthors = true        # Show authors on post page
 showCategories = true     # Show categories on post page
 
-[params.author]
-  name = "Chris"  # Website and RSS feed author
-  email = "christopher.sanchez@studenti.unitn.it"  # RSS feed email address
 
-[[params.social]]
-key = 0
-name = "email"
-url = "christopher.sanchez@studenti.unitn.it"
-aria = "My e-Mail Address"
-
-[params.styles]
-color = "orange"
-
-[params]
-footerHtml = 'Hi guys!'
