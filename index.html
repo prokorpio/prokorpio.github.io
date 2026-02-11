@@ -76,14 +76,28 @@
             yesBtn.style.padding = yesPadding + "px " + (yesPadding * 2) + "px";
 
             // Make the No button text change for fun
-            const messages = ["Are you sure?", "Really?", "Think again!", "Last chance!", "Don't do this!", "Okay fine..."];
+            const messages = ["Are you sure?", "Really?", "Come on Mochiii!", "Hay nako", "Don't do this!", "Hay buhay..."];
             const noBtn = document.getElementById("noBtn");
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
             noBtn.innerText = randomMessage;
         }
 
         function sayYes() {
-            document.body.innerHTML = "<h1 style='font-size: 4rem; color: #d32f2f;'>YAY! See you on the 13th! ❤️</h1> (Let's go out on Friday evening instead bc I need to go home early on the 14th waha)";
+            // 1. Send the email notification
+            fetch("https://formsubmit.co/ajax/christopher.jeff.sanchez@eee.upd.edu.ph", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: "MOATI SAID YES! 🎉 Time to plan the date."
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error));
+            document.body.innerHTML = "<h1 style='font-size: 4rem; color: #d32f2f;'>YAY! See you on the 13th! ❤️</h1> (Let's go out on Friday evening instead bc I need to go home early on the 14th wahaha)";
         }
     </script>
 
