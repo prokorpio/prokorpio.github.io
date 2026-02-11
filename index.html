@@ -75,11 +75,21 @@
             yesBtn.style.fontSize = yesSize + "rem";
             yesBtn.style.padding = yesPadding + "px " + (yesPadding * 2) + "px";
 
-            // Make the No button text change for fun
-            const messages = ["Are you sure?", "Come on Mochiii!", "Hay nako", "Don't do this!", "Hay buhay...", "Sach Mai?", "Block me everywhere now", "Mayank said this will work!!"];
+            // Change the No button text
+            const messages = [
+              "Are you sure?", "Come on Mochiii!", "Hay buhay", "wHy r U gAy?", "Stop being gay", "Sach Mai?", 
+              "Block me everywhere now", "Mayank said this will work!!", "I'm calling the police", "I knew you were racist", 
+              "I'll tell everyone you snore", "Think of the children (we don't have)", "I'm running out of ideas wahaha", "How many times u pressing NO??"];
             const noBtn = document.getElementById("noBtn");
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            noBtn.innerText = randomMessage;
+
+            if (messageIndex < messages.length) {
+                // Go through the list in order
+                noBtn.innerText = messages[messageIndex];
+                messageIndex++;
+            } else {
+                // Once the list is done, pick a random one
+                noBtn.innerText = messages[Math.floor(Math.random() * messages.length)];
+            }
         }
 
         function sayYes() {
