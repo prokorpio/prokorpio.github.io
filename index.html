@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Very Serious Question</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffe6e6; /* Cute pink background */
+            margin: 0;
+            overflow: hidden; /* Stops scrollbars from appearing when button gets huge */
+        }
+        h1 {
+            color: #d32f2f;
+            margin-bottom: 20px;
+            font-size: 3rem;
+            text-align: center;
+        }
+        .gif-container {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yesBtn {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            font-weight: bold;
+        }
+        #noBtn {
+            background-color: #f44336; /* Red */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3R6eW50aHBoYmE4eXJ5aW50aHBoYmE4eXJ5/ft2CDVMCfO/giphy.gif" alt="Cute Bear" style="width: 200px; border-radius: 10px;">
+    </div>
+
+    <h1>Will you be my Valentine?</h1>
+
+    <div class="buttons">
+        <button id="yesBtn" onclick="sayYes()">Yes</button>
+        <button id="noBtn" onclick="growYes()">No</button>
+    </div>
+
+    <script>
+        let yesSize = 1.2; // Initial font size in rem
+        let yesPadding = 15; // Initial padding
+
+        function growYes() {
+            // Increase size
+            yesSize += 1.5; 
+            yesPadding += 10;
+            
+            const yesBtn = document.getElementById("yesBtn");
+            yesBtn.style.fontSize = yesSize + "rem";
+            yesBtn.style.padding = yesPadding + "px " + (yesPadding * 2) + "px";
+
+            // Make the No button text change for fun
+            const messages = ["Are you sure?", "Really?", "Think again!", "Last chance!", "Don't do this!", "Okay fine..."];
+            const noBtn = document.getElementById("noBtn");
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            noBtn.innerText = randomMessage;
+        }
+
+        function sayYes() {
+            document.body.innerHTML = "<h1 style='font-size: 4rem; color: #d32f2f;'>YAY! See you on the 14th! ❤️</h1>";
+        }
+    </script>
+
+</body>
+</html>
